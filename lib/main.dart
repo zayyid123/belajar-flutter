@@ -11,24 +11,41 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.teal,
-            title: const Center(
-              child: Text('My Apps'),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text('widget column'),
+        ),
+        body: Column(
+          /* untuk ubah main axis */
+          mainAxisAlignment: MainAxisAlignment.center,
+          /* untuk ubah cross axis */
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 200,
+              height: 50,
+              color: Colors.blue,
             ),
-          ),
-          body: const Center(
-            child: Text(
-              'Hallo zayyid ganteng pool',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Roboto'),
+            Container(
+              width: 50,
+              height: 50,
+              color: Colors.red,
             ),
-          ),
-        ));
+            Container(
+              width: 100,
+              height: 50,
+              color: Colors.amber,
+            ),
+            Container(
+              width: 150,
+              height: 50,
+              color: Colors.black,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
