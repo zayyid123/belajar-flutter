@@ -13,22 +13,34 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.teal,
-            title: const Center(
-              child: Text('My Apps'),
+            appBar: AppBar(
+              title: const Center(
+                child: Text('Stack widget'),
+              ),
             ),
-          ),
-          body: const Center(
-            child: Text(
-              'Hallo zayyid ganteng pool',
-              style: TextStyle(
+            body: Stack(
+              children: [
+                Container(
+                  width: 300,
+                  height: 300,
+                  color: Colors.amber,
+                ),
+                Container(
+                  width: 200,
+                  height: 200,
                   color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Roboto'),
-            ),
-          ),
-        ));
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.red,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.blue,
+                )
+              ],
+            )));
   }
 }
