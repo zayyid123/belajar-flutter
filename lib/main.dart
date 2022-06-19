@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +8,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  List<Color> myColor = [
+    Colors.amber,
+    Colors.red,
+    Colors.black,
+    Colors.cyan,
+    Colors.red
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -14,20 +23,19 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.teal,
             title: const Center(
-              child: Text('My Apps'),
+              child: Text('List View'),
             ),
           ),
-          body: const Center(
-            child: Text(
-              'Hallo zayyid ganteng pool',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Roboto'),
-            ),
+          body: ListView.builder(
+            itemCount: myColor.length,
+            itemBuilder: (context, index) {
+              return Container(
+                width: 300,
+                height: 300,
+                color: myColor[index],
+              );
+            },
           ),
         ));
   }
