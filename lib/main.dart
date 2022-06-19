@@ -13,22 +13,48 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.teal,
-            title: const Center(
-              child: Text('My Apps'),
+            appBar: AppBar(
+              title: const Center(
+                child: Text('Image Widget'),
+              ),
             ),
-          ),
-          body: const Center(
-            child: Text(
-              'Hallo zayyid ganteng pool',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Roboto'),
-            ),
-          ),
-        ));
+            body: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                const Text(
+                  'image Asset',
+                  textAlign: TextAlign.center,
+                ),
+                Container(
+                  color: Colors.amber,
+                  child: const Image(
+                    fit: BoxFit.cover,
+                    image: AssetImage('images/image.jpg'),
+                  ),
+                ),
+                const Divider(),
+                const Text(
+                  'image network',
+                  textAlign: TextAlign.center,
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: const Image(
+                    fit: BoxFit.cover,
+                    image: NetworkImage('https://picsum.photos/200/300'),
+                  ),
+                ),
+                const Text(
+                  'image asset cara kedua',
+                  textAlign: TextAlign.center,
+                ),
+                Container(
+                    color: Colors.blue,
+                    child: Image.asset(
+                      'images/image.jpg',
+                      fit: BoxFit.cover,
+                    )),
+              ],
+            )));
   }
 }
