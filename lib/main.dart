@@ -14,20 +14,37 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.teal,
             title: const Center(
-              child: Text('My Apps'),
+              child: Text('List Tile'),
             ),
           ),
-          body: const Center(
-            child: Text(
-              'Hallo zayyid ganteng pool',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Roboto'),
-            ),
+          body: Column(
+            children: const [
+              ListTile(
+                title: Text('Mochamad Zayyid'),
+                subtitle: Text('ini sub titte'),
+                leading: CircleAvatar(),
+                trailing: Text('10.00 PM'),
+              ),
+              Divider(
+                color: Colors.black,
+              ),
+              ListTile(
+                title: Text('Mochamad Zayyid'),
+                subtitle: Text('ini sub juga'),
+                leading: CircleAvatar(),
+                trailing: Text('10.00 PM'),
+              ),
+              Divider(
+                  // color: Colors.black,
+                  ),
+              ListTile(
+                title: Text('Mochamad Zayyid'),
+                subtitle: Text('apa lagi ini'),
+                leading: CircleAvatar(),
+                trailing: Text('10.00 PM'),
+              ),
+            ],
           ),
         ));
   }
